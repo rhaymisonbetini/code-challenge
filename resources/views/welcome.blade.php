@@ -44,6 +44,7 @@
             <div class="row  justify-content-around" style="width:100%">
                 <div class="col text-center">
                     <select name="country" class="form-control">
+                        <option value="" disabled selected>Select country</option>
                         <option value="(237)">Camerron</option>
                         <option value="(251)">Ethiopia</option>
                         <option value="(212)">Morroco</option>
@@ -80,7 +81,7 @@
                 <tbody>
                     @foreach ($validatedCurstomers as $customer)
                     <tr style="cursor:pointer">
-                        <th scope="row">1</th>
+                        <th scope="row">{{$customer->id ?? ''}}</th>
                         <td>{{$customer->name ?? ''}}</td>
                         <td>{{$customer->phone ?? ''}}</td>
                         <td>{{$customer->country ?? ''}}</td>

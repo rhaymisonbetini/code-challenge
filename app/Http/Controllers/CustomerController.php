@@ -26,7 +26,6 @@ class CustomerController extends Controller
             $customers = $this->customerRepository->getCustomers();
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
-                session()->flash('success', 'Page loaded successfully!');
                 return view('welcome', compact('validatedCurstomers'));
             }
         } catch (Exception $e) {
@@ -37,10 +36,17 @@ class CustomerController extends Controller
     public function filterCustomers(Request $request): mixed
     {
         try {
+
+            if (is_null($request['status']) && !$request['country']) {
+                $validatedCurstomers = [];
+                return redirect()->back()->with('danger', 'Invalid filters. At least one search parameter must be provided.');
+            }
+
             $customers = $this->customerRepository->filterCustomers($request);
 
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
+
                 if ($request['status']) {
                     foreach ($validatedCurstomers as $key => $customer) {
                         if ($customer->isValid != intval($request['status'])) {
@@ -49,14 +55,14 @@ class CustomerController extends Controller
                     }
                 }
 
-                $status = $request['status'] ? 'status :'. $request['status'] . ' and ' : null;
+                $status = $request['status'] ? 'status :' . $request['status'] . ' and ' : null;
                 $country = $request['country'] ? 'country code: ' . $request['country'] : null;
 
                 session()->flash('success', 'Filtered by: ' . $status . $country);
                 return view('welcome', compact('validatedCurstomers'));
             }
         } catch (Exception $e) {
-            return redirect()->back()->with('danger', $e->getMessage());
+            return redirect()->back()->with('danger', $e->getMessage(), 400);
         }
     }
 }
