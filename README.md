@@ -1,5 +1,7 @@
 # code-challenge
 
+![alt text](https://github.com/rhaymisonbetini/ashiley-neural-network/blob/main/public/prints/document.jpg)
+
 ## Install
 
 Clone your repository using the command: <br/>
