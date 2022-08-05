@@ -98,7 +98,7 @@
             </table>
             <br />
             <br />
-            {{ $validatedCurstomers->withQueryString()->links() }}
+            {{$validatedCurstomers->withQueryString()->links() }}
         </div>
     </div>
 

@@ -18,6 +18,6 @@ class CustomerRepository
             if ($request['country']) {
                 $query->where('phone', 'like', '%' . $request['country'] . '%');
             }
-        })->paginate(10);
+        })->paginate(100);
     }
 }
