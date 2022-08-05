@@ -15,9 +15,9 @@ class ValidadePhoneNumberService
     //Regex expressions
     private $camerronRegex = '/\(237\)\ ?[2368]\d{7,8}$/';
     private $ethiopiaRegex = '/\(251\)\ ?[1-59]\d{8}$/';
-    private $moroccoRegex = '/\(212\)\ ?[5-9]\d{8}$/';
+    private $morrocoRegex = '/\(212\)\ ?[5-9]\d{8}$/';
     private $mozambiqueRegex = '/\(258\)\ ?[28]\d{7,8}$/';
-    private $ugandagex = '/\(256\)\ ?\d{9}$/';
+    private $ugandaRex = '/\(256\)\ ?\d{9}$/';
 
 
     public function validatePhoneNumber($customers): mixed
@@ -37,7 +37,7 @@ class ValidadePhoneNumberService
                     break;
 
                 case $this->morrocoCode;
-                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->moroccoRegex);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->morrocoRegex);
                     $customer->country = 'Morroco';
                     break;
 
@@ -47,7 +47,7 @@ class ValidadePhoneNumberService
                     break;
 
                 case $this->ugandaCode;
-                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->ugandagex);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->ugandaRex);
                     $customer->country = 'Uganda';
                     break;
             }
