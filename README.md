@@ -112,12 +112,14 @@ Checking that our application is running, just run the command: <br/>
 
 <br/>
 
-## Additional projects
+## Additional project
 
 tom-coin.
 API project that consumes a blockChain in Python.
 The system provides data for an application developed in ionic
 
-<a href="https://github.com/rhaymisonbetini/tom-coin-backend" target="_blank">Tom Coin <a/>
+<a href="https://github.com/rhaymisonbetini/tom-coin-backend" target="_blank">Tom Coin <a/> <br/>
+    
+
 
 
