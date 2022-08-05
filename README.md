@@ -96,6 +96,15 @@ Project developed with Laravel9, PHP8 and Mysql.<br/>
 Laravel's default design is based on MVC. Added Repositories and Services.<br/>
 With this addition we leave only the business rules inside the controllers and the repository becomes the accessor of our database.<br/>
 The services are responsible for providing methods that can be accessed throughout our application.<br/>
-For testing purposes we used Phpunit. This by default is also built into Laravel in its latest versions
+For testing purposes we used Phpunit. This by default is also built into Laravel in its latest versions <br/>
+The dependency injection method was performed in the controller's constructor.
+<br/>
+On the front, the layout engine provided by laravel (Blade) was used. Bootstrap was also incorporated in its version 5 to give the page stylization.
+<br/>
+No external library was added as it was not necessary to use javascript on the front.
 
+## Running our application tests
+To perform the tests on the system it is necessary that the server is online. <br/>
+Checking that our application is running, just run the command: <br/>
+```./vendor/bin/phpunit ```
 
