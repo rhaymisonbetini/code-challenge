@@ -73,3 +73,13 @@ VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
+In your DBMS create the database informed in
+DB_DATABASE of yours. <br/>
+
+Run the following commands:<br/>
+``` php artisan migrate```<br/>
+The structure of our database will be created.<br/>
+``` php artisan db:seed```<br/>
+Our database will be populated with system data<br/>
+
+
