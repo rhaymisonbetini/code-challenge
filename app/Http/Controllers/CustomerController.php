@@ -29,7 +29,7 @@ class CustomerController extends Controller
                 return view('welcome', compact('validatedCurstomers'));
             }
         } catch (Exception $e) {
-            return redirect()->back()->with('danger', $e->getMessage());
+            return redirect()->back()->with('danger', $e->getMessage(), 400);
         }
     }
 
