@@ -13,11 +13,11 @@ class ValidadePhoneNumberService
     private $ugandaCode = '256';
 
     //Regex expressions
-    private $camerronRegex = '/(\+237|237)\s(6|2)(2|3|[5-9])[0-9]{7}/';
-    private $ethiopiaRegex = '/(251)\ ?[1-59]\d{8}$/';
-    private $moroccoRegex = '/(212)\ ?[5-9]\d{8}$/';
-    private $MozambiqueRegex = '/(258)\ ?[28]\d{7,8}$/';
-    private $Ugandagex = '/\(256\)\s\d{4,5}-?\d{4}/';
+    private $camerronRegex = '/\(237\)\ ?[2368]\d{7,8}$/';
+    private $ethiopiaRegex = '/\(251\)\ ?[1-59]\d{8}$/';
+    private $moroccoRegex = '/\(212\)\ ?[5-9]\d{8}$/';
+    private $MozambiqueRegex = '/\(258\)\ ?[28]\d{7,8}$/';
+    private $Ugandagex = '/\(256\)\ ?\d{9}$/';
 
 
     public function validatePhoneNumber($customers): mixed

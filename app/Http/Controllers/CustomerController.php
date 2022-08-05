@@ -47,7 +47,7 @@ class CustomerController extends Controller
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
 
-                if ($request['status']) {
+                if (!is_null($request['status'])) {
                     foreach ($validatedCurstomers as $key => $customer) {
                         if ($customer->isValid != intval($request['status'])) {
                             $validatedCurstomers->forget($key);
@@ -57,9 +57,9 @@ class CustomerController extends Controller
 
                 $status = $request['status'] ? 'status :' . $request['status'] . ' and ' : null;
                 $country = $request['country'] ? 'country code: ' . $request['country'] : null;
-
                 session()->flash('success', 'Filtered by: ' . $status . $country);
-                return view('welcome', compact('validatedCurstomers'));
+                $isFilter = true;
+                return view('welcome', compact('validatedCurstomers', $isFilter));
             }
         } catch (Exception $e) {
             return redirect()->back()->with('danger', $e->getMessage(), 400);
