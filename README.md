@@ -108,3 +108,4 @@ To perform the tests on the system it is necessary that the server is online. <b
 Checking that our application is running, just run the command: <br/>
 ```./vendor/bin/phpunit ```
 
+![alt text](https://github.com/rhaymisonbetini/code-challenge/blob/main/public/shots/test.jpg)
