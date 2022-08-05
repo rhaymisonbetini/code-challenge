@@ -27,27 +27,27 @@ class ValidadePhoneNumberService
 
             switch (substr($customer->phone, 1, 3)) {
                 case $this->camerronCode:
-                    $customer->isValid = $this->validateCamerron($customer->phone);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->camerronRegex);
                     $customer->country = 'Camerron';
                     break;
 
                 case $this->ethiopiaCode;
-                    $customer->isValid = $this->validadeEthiopia($customer->phone);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->ethiopiaRegex);
                     $customer->country = 'Ethiopia';
                     break;
 
                 case $this->morrocoCode;
-                    $customer->isValid = $this->validadeMorocco($customer->phone);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->moroccoRegex);
                     $customer->country = 'Morroco';
                     break;
 
                 case $this->mozambique;
-                    $customer->isValid = $this->validadeMozambique($customer->phone);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->mozambiqueRegex);
                     $customer->country = 'Mozambique';
                     break;
 
                 case $this->ugandaCode;
-                    $customer->isValid = $this->validadeUganda($customer->phone);
+                    $customer->isValid = $this->isValidPhoneNumber($customer->phone, $this->ugandagex);
                     $customer->country = 'Uganda';
                     break;
             }
@@ -55,29 +55,9 @@ class ValidadePhoneNumberService
         return $customers;
     }
 
-
-    public function validateCamerron($phone): bool
+    public function isValidPhoneNumber($phone, $regex) : bool
     {
-        return preg_match($this->camerronRegex, $phone);
+        return preg_match($regex, $phone);
     }
 
-    public function validadeEthiopia($phone): bool
-    {
-        return preg_match($this->ethiopiaRegex, $phone);
-    }
-
-    public function validadeMorocco($phone): bool
-    {
-        return preg_match($this->moroccoRegex, $phone);
-    }
-
-    public function validadeMozambique($phone): bool
-    {
-        return preg_match($this->mozambiqueRegex, $phone);
-    }
-
-    public function validadeUganda($phone): bool
-    {
-        return preg_match($this->ugandagex, $phone);
-    }
 }
