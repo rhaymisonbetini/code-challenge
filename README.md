@@ -109,3 +109,15 @@ Checking that our application is running, just run the command: <br/>
 ```./vendor/bin/phpunit ```
 
 ![alt text](https://github.com/rhaymisonbetini/code-challenge/blob/main/public/shots/test.jpg)
+
+<br/>
+
+## Additional projects
+
+tom-coin.
+API project that consumes a blockChain in Python.
+The system provides data for an application developed in ionic
+
+<a href="https://github.com/rhaymisonbetini/tom-coin-backend" target="_blank">Tom Coin <a/>
+
+
