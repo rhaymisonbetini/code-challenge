@@ -82,4 +82,7 @@ The structure of our database will be created.<br/>
 ``` php artisan db:seed```<br/>
 Our database will be populated with system data<br/>
 
-
+Now with the entire system base configured, just run the command:<br/>
+``` php artisan server ```<br/>
+The server will be running on port 8000<br/>
+http://127.0.0.1:8000<br/>
