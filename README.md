@@ -88,3 +88,14 @@ Now with the entire system base configured, just run the command:<br/>
 ``` php artisan server ```<br/>
 The server will be running on port 8000<br/>
 http://127.0.0.1:8000<br/>
+
+## Additional information about the project.<br/>
+
+Project developed with Laravel9, PHP8 and Mysql.<br/>
+
+Laravel's default design is based on MVC. Added Repositories and Services.<br/>
+With this addition we leave only the business rules inside the controllers and the repository becomes the accessor of our database.<br/>
+The services are responsible for providing methods that can be accessed throughout our application.<br/>
+For testing purposes we used Phpunit. This by default is also built into Laravel in its latest versions
+
+
