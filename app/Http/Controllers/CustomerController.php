@@ -58,8 +58,7 @@ class CustomerController extends Controller
                 $status = $request['status'] ? 'status :' . $request['status'] . ' and ' : null;
                 $country = $request['country'] ? 'country code: ' . $request['country'] : null;
                 session()->flash('success', 'Filtered by: ' . $status . $country);
-                $isFilter = true;
-                return view('welcome', compact('validatedCurstomers', $isFilter));
+                return view('welcome', compact('validatedCurstomers'));
             }
         } catch (Exception $e) {
             return redirect()->back()->with('danger', $e->getMessage(), 400);
