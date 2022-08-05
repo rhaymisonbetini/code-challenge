@@ -76,7 +76,7 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
 In your DBMS create the database informed in
-DB_DATABASE of yours. <br/>
+DB_DATABASE. <br/>
 
 Run the following commands:<br/>
 ``` php artisan migrate```<br/>
