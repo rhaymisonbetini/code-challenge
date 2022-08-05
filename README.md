@@ -1,6 +1,6 @@
 # code-challenge
 
-![alt text](https://github.com/rhaymisonbetini/ashiley-neural-network/blob/main/public/prints/document.jpg)
+![alt text](https://github.com/rhaymisonbetini/code-challenge/blob/main/public/shots/shot.jpg)
 
 ## Install
 
