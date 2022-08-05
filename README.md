@@ -13,7 +13,7 @@ In this project we upgraded the sqlite database to Mysql. This way we will have 
 database closer to the real work environment. <br/>
 
 After cloned the repository, let's configure our env file. <br/>
-Copy the env file below and change the data from the database to your Mysql local connection<br/>
+Copy the data below and create an .env file in the system root folder. Modify the database connection variables with your mysql data<br/>
 ```
 APP_NAME=Laravel
 APP_ENV=local
