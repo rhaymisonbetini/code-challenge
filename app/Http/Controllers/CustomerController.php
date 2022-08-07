@@ -48,6 +48,7 @@ class CustomerController extends Controller
             }
 
             $customers = $this->customerRepository->filterCustomers($request);
+            $validatedCurstomers = null;
 
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
@@ -60,11 +61,16 @@ class CustomerController extends Controller
                     }
                 }
 
-                $status = $request['status'] ? 'status :' . $request['status'] . ' and ' : null;
+                $status = $request['status'] ? 'status :' . $request['status'] : null;
                 $country = $request['country'] ? 'country code: ' . $request['country'] : null;
                 session()->flash('success', 'Filtered by: ' . $status . $country);
-                return view('welcome', compact('validatedCurstomers'));
+
+            }else{
+                session()->flash('success', 'There is no data recorded in our system for this request.');
             }
+
+            return view('welcome', compact('validatedCurstomers'));
+
         } catch (Exception $e) {
             return redirect()->back()->with('danger', $e->getMessage(), 400);
         }
