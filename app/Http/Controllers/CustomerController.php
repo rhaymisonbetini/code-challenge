@@ -24,10 +24,12 @@ class CustomerController extends Controller
         try {
 
             $customers = $this->customerRepository->getCustomers();
+            $validatedCurstomers = [];
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
-                return view('welcome', compact('validatedCurstomers'));
             }
+            return view('welcome', compact('validatedCurstomers'));
+
         } catch (Exception $e) {
             return redirect()->back()->with('danger', $e->getMessage(), 400);
         }
@@ -38,7 +40,6 @@ class CustomerController extends Controller
         try {
 
             if (is_null($request['status']) && !$request['country']) {
-                $validatedCurstomers = [];
                 return redirect()->back()->with('danger', 'Invalid filters. At least one search parameter must be provided.');
             }
 
