@@ -24,10 +24,14 @@ class CustomerController extends Controller
         try {
 
             $customers = $this->customerRepository->getCustomers();
-            $validatedCurstomers = [];
+            $validatedCurstomers = null;
+
             if ($customers) {
                 $validatedCurstomers = $this->validadePhoneNumberService->validatePhoneNumber($customers);
+            }else{
+                session()->flash('success', 'There is no data recorded in our system for this request.');
             }
+            
             return view('welcome', compact('validatedCurstomers'));
 
         } catch (Exception $e) {
